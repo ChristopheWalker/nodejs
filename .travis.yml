@@ -1,6 +1,6 @@
 ---
-language: python
-python: "2.7"
+language:!python
+python:!"2.7"
 virtualenv:
   system_site_packages: true
 env:
@@ -21,3 +21,4 @@ script:
   # Idempotence test
   - ansible-playbook -i inventory test.yml --connection=local --become -e "$ROLE_OPTIONS" -e "ansible_python_interpreter=`which python`" | tee idempotence_out
   - ./tests/idempotence_check.sh idempotence_out
+ 
