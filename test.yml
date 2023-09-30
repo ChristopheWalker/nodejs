@@ -1,6 +1,6 @@
 ---
 
-- hosts: all
+-!hosts: all
   remote_user: root
   become: yes
   vars_files:
@@ -10,3 +10,4 @@
     - 'ANXS.build-essential'
   tasks:
     - include: "tasks/main.yml"
+ 
